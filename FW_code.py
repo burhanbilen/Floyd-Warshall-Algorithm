@@ -2,19 +2,19 @@ import numpy as np
 
 
 # Representation of Nodes
-# A: 0 ,  B: 1 ,  C: 2 ,  D: 3 ,  E: 4 ,  F: 5 ,  G: 6 ,  H: 7 ,  S: 8
+# S: 0 ,  C: 1 ,  E: 2 ,  H: 3 ,  F: 4 ,  D: 5 ,  G: 6 ,  B: 7 ,  A: 8
 
 INF = 99999999 # Infinity
 
-Graph = np.array([[0, 4, INF, 5, INF, INF, 2, INF, INF],
-                 [4, 0, INF, 5, INF, INF, 1, 5, INF],
-                 [INF, INF, 0, 2, 1, 3, INF, INF, 3],
-                 [5, INF, 2, 0, INF, 2, 1, INF, INF],
-                 [INF, INF, 1, INF, 0, INF, 2, INF, INF],
-                 [INF, 3, 3, 2, INF, 0, INF, 2, INF],
-                 [INF, INF, 1, INF, INF, INF, INF, 1, 2],
-                 [INF, INF, INF, INF, 1, 2, INF, 0, 1],
-                 [INF, INF, 3, INF, 2, INF, INF, 1, 0]])
+Graph = np.array([[ 0,  3,   2,   1,   INF, INF, INF, INF, INF],
+                  [ 3,  0,   1,   INF, 3,   2,   INF, INF, INF],
+                  [ 2,  1,   0,   1,   INF, INF, INF, INF, INF],
+                  [ 1,  INF, 1,   0,   2,   INF, INF, 5,   INF],
+                  [INF, 3,   INF, 2,   0,   2,   INF, 3,   INF],
+                  [INF, 2,   INF, INF, 2,   0,   1,   INF, 5  ],
+                  [INF, INF, INF, INF, INF, 1,   0,   1,   2  ],
+                  [INF, INF, INF, 5,   3,   INF, 1,   0,   4  ],
+                  [INF, INF, INF, INF, INF, 5,   2,   4,   0  ]])
 
 def floyd_warshall(Distance_Matrix, node):
     for k in range(node):
